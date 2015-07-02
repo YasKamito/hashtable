@@ -1,0 +1,10 @@
+.project
+.cproject
+*.o
+*.gcda
+*.gcno
+*.gcov
+*.exe
+*.pump
+/Debug/
+/gtest/
