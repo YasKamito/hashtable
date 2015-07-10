@@ -120,7 +120,7 @@ int hash_init_impl(nodeptr *hashtable, long maxvalue){
 int (*hash_init)(nodeptr *, long) = hash_init_impl;
 
 /***************************************************************************//**
- * @fn		nodeptr hash_bin_search_impl(nodeptr *p, nodeptr *root, char *pKey)
+ * @fn		nodeptr hash_find_impl(nodeptr *p, nodeptr *root, char *pKey)
  * ‚Q•ª’Tõ–ØŠÖ”
  *
  * @param[in]	nodeptr *p			ƒnƒbƒVƒ…ƒe[ƒuƒ‹‚ÌƒAƒhƒŒƒX
@@ -131,7 +131,7 @@ int (*hash_init)(nodeptr *, long) = hash_init_impl;
  * ### ˆ—“à—e
  *
  ******************************************************************************/
-nodeptr * hash_bin_search_impl(nodeptr *currnode, nodeptr *initroot, char *pkey){
+nodeptr * hash_find_impl(nodeptr *currnode, nodeptr *initroot, char *pkey){
 
 	int cmp;
 
@@ -168,7 +168,7 @@ nodeptr * hash_bin_search_impl(nodeptr *currnode, nodeptr *initroot, char *pkey)
 
 	return currnode;
 }
-nodeptr *(*hash_bin_search)(nodeptr *, nodeptr *, char *) = hash_bin_search_impl;
+nodeptr *(*hash_find)(nodeptr *, nodeptr *, char *) = hash_find_impl;
 
 /***************************************************************************//**
  * @fn		nodeptr * hash_malloc_impl(nodeptr *currnode, nodeptr *initroot, char *pKeyStr, int iValue)
@@ -246,9 +246,9 @@ int hash_get_impl(nodeptr *hashtable, char *pkey, nodeptr *out){
 #endif
 
 	/**
-	 * hash_bin_search(nodeptr *, nodeptr *, char *)ŠÖ”‚É‚æ‚è‚Q•ª–Ø‚ğŒŸõ‚·‚éB
+	 * hash_find(nodeptr *, nodeptr *, char *)ŠÖ”‚É‚æ‚è‚Q•ª–Ø‚ğŒŸõ‚·‚éB
 	 */
-	p = hash_bin_search(p,root,pkey);
+	p = hash_find(p,root,pkey);
 
 	/**
 	 * ‚·‚Å‚É“o˜^‚³‚ê‚Ä‚¢‚éê‡‚Ío—Í’lnodeptr *out‚Éƒm[ƒh‚ÌƒAƒhƒŒƒX‚ğ
@@ -315,9 +315,9 @@ int hash_insert_impl(nodeptr *hashtable, char *pkey, long lval, nodeptr *out){
 #endif
 
 	/**
-	 * hash_bin_search(nodeptr *, nodeptr *, char *)ŠÖ”‚É‚æ‚è‚Q•ª–Ø‚ğŒŸõ‚·‚éB
+	 * hash_find(nodeptr *, nodeptr *, char *)ŠÖ”‚É‚æ‚è‚Q•ª–Ø‚ğŒŸõ‚·‚éB
 	 */
-	p = hash_bin_search(p,root,pkey);
+	p = hash_find(p,root,pkey);
 
 	/**
 	 * ‚·‚Å‚É“o˜^‚³‚ê‚Ä‚¢‚éê‡‚Íˆ—‚ğ”²‚¯‚é
@@ -392,9 +392,9 @@ int hash_update_impl(nodeptr *hashtable, char *pkey, long lval, nodeptr *out){
 #endif
 
 	/**
-	 * hash_bin_search(nodeptr *, nodeptr *, char *)ŠÖ”‚É‚æ‚è‚Q•ª–Ø‚ğŒŸõ‚·‚éB
+	 * hash_find(nodeptr *, nodeptr *, char *)ŠÖ”‚É‚æ‚è‚Q•ª–Ø‚ğŒŸõ‚·‚éB
 	 */
-	p = hash_bin_search(p,root,pkey);
+	p = hash_find(p,root,pkey);
 
 	/**
 	 * ‚·‚Å‚É“o˜^‚³‚ê‚Ä‚¢‚éê‡‚Íˆ—‚ğ”²‚¯‚é
@@ -461,9 +461,9 @@ int hash_upsert_impl(nodeptr *hashtable, char *pkey, long lval, nodeptr *out){
 #endif
 
 	/**
-	 * hash_bin_search(nodeptr *, nodeptr *, char *)ŠÖ”‚É‚æ‚è‚Q•ª–Ø‚ğŒŸõ‚·‚éB
+	 * hash_find(nodeptr *, nodeptr *, char *)ŠÖ”‚É‚æ‚è‚Q•ª–Ø‚ğŒŸõ‚·‚éB
 	 */
-	p = hash_bin_search(p,root,pkey);
+	p = hash_find(p,root,pkey);
 
 	/**
 	 * ‚·‚Å‚É“o˜^‚³‚ê‚Ä‚¢‚éê‡‚Íˆ—‚ğ”²‚¯‚é
@@ -538,9 +538,9 @@ int hash_update_plusone_impl(nodeptr *hashtable, char *pkey, nodeptr *out){
 #endif
 
 	/**
-	 * hash_bin_search(nodeptr *, nodeptr *, char *)ŠÖ”‚É‚æ‚è‚Q•ª–Ø‚ğŒŸõ‚·‚éB
+	 * hash_find(nodeptr *, nodeptr *, char *)ŠÖ”‚É‚æ‚è‚Q•ª–Ø‚ğŒŸõ‚·‚éB
 	 */
-	p = hash_bin_search(p,root,pkey);
+	p = hash_find(p,root,pkey);
 
 	/**
 	 * ‚·‚Å‚É“o˜^‚³‚ê‚Ä‚¢‚éê‡‚Íˆ—‚ğ”²‚¯‚é
@@ -611,9 +611,9 @@ int hash_upsert_plusone_impl(nodeptr *hashtable, char *pkey, nodeptr *out){
 #endif
 
 	/**
-	 * hash_bin_search(nodeptr *, nodeptr *, char *)ŠÖ”‚É‚æ‚è‚Q•ª–Ø‚ğŒŸõ‚·‚éB
+	 * hash_find(nodeptr *, nodeptr *, char *)ŠÖ”‚É‚æ‚è‚Q•ª–Ø‚ğŒŸõ‚·‚éB
 	 */
-	p = hash_bin_search(p,root,pkey);
+	p = hash_find(p,root,pkey);
 
 	/**
 	 * ‚·‚Å‚É“o˜^‚³‚ê‚Ä‚¢‚éê‡‚Íˆ—‚ğ”²‚¯‚é

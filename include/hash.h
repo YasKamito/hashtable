@@ -42,7 +42,7 @@ typedef struct node {
 
 extern int (*hash)(char *);
 extern int (*hash_init)(nodeptr *, long);
-extern nodeptr *(*hash_bin_search)(nodeptr *, nodeptr *, char *);
+extern nodeptr *(*hash_find)(nodeptr *, nodeptr *, char *);
 extern nodeptr *(*hash_malloc)(nodeptr *, nodeptr *, char *, long );
 extern int (*hash_get)(nodeptr *,char *, nodeptr *);
 extern int (*hash_insert)(nodeptr *,char *, long, nodeptr *);
