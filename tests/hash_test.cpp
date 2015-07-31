@@ -13,16 +13,16 @@ extern "C"
 #include "hash.h"
 }
 
-#include "gtest/gtest.h" /** GoogleTest ƒCƒ“ƒNƒ‹[ƒh */
+#include "gtest/gtest.h" /** GoogleTest ã‚¤ãƒ³ã‚¯ãƒ«ãƒ¼ãƒ‰ */
 
 
 int mock_hash(char *pchStr){
-    return 5;
+	return 5;
 }
 
 nodeptr hashtable[HASHSIZE];
 /*******************************************************************************
-* ƒeƒXƒgƒNƒ‰ƒX‚Ì’è‹`
+* ãƒ†ã‚¹ãƒˆã‚¯ãƒ©ã‚¹ã®å®šç¾©
 *******************************************************************************/
 class HashTest : public ::testing::Test
 {
@@ -32,29 +32,29 @@ class HashTest : public ::testing::Test
   virtual void SetUp()
   {
 
-	  saved_hash = hash;
+	saved_hash = hash;
 
   }
 
   virtual void TearDown()
   {
 
-	  hash = saved_hash;
+	hash = saved_hash;
 
   }
 };
 
 /*******************************************************************************
-* ƒeƒXƒgƒP[ƒX‚P
+* ãƒ†ã‚¹ãƒˆã‚±ãƒ¼ã‚¹ï¼‘
 *
-* ğŒF
+* æ¡ä»¶ï¼š
 *
 *******************************************************************************/
 TEST_F(HashTest, CASE001)
 {
 	int i;
 
-    EXPECT_EQ(0, hash_init(hashtable, 0) );
+	EXPECT_EQ(0, hash_init(hashtable, 0) );
 
 	for(i = 0; i < HASHSIZE; i++){
 		EXPECT_TRUE((hashtable[i])->left == 0x00);
@@ -66,9 +66,9 @@ TEST_F(HashTest, CASE001)
 
 
 /*******************************************************************************
-* ƒeƒXƒgƒP[ƒX‚P
+* ãƒ†ã‚¹ãƒˆã‚±ãƒ¼ã‚¹ï¼‘
 *
-* ğŒF
+* æ¡ä»¶ï¼š
 *
 *******************************************************************************/
 TEST_F(HashTest, CASE002)
@@ -80,26 +80,26 @@ TEST_F(HashTest, CASE002)
 	nodeptr pout;
 	pout = &outnode;
 
-    EXPECT_EQ(0, hash_init(hashtable, 0) );
+	EXPECT_EQ(0, hash_init(hashtable, 0) );
 
 	memset(pkey,0x00,sizeof(key));
 	strcpy(key, "aaaa");
-    EXPECT_EQ(1, hash_insert(hashtable,pkey,1, &pout) );
-    EXPECT_EQ(1, (pout)->val );
+	EXPECT_EQ(1, hash_insert(hashtable,pkey,1, &pout) );
+	EXPECT_EQ(1, (pout)->val );
 
 	memset(pkey,0x00,sizeof(key));
 	strcpy(key, "aaaa");
-    EXPECT_EQ(0, hash_insert(hashtable,pkey,1, &pout) );
-    EXPECT_EQ(1, (pout)->val );
+	EXPECT_EQ(0, hash_insert(hashtable,pkey,1, &pout) );
+	EXPECT_EQ(1, (pout)->val );
 
-    EXPECT_EQ(0, hash_terminate(hashtable) );
+	EXPECT_EQ(0, hash_terminate(hashtable) );
 }
 
 
 /*******************************************************************************
-* ƒeƒXƒgƒP[ƒX‚P
+* ãƒ†ã‚¹ãƒˆã‚±ãƒ¼ã‚¹ï¼‘
 *
-* ğŒF
+* æ¡ä»¶ï¼š
 *
 *******************************************************************************/
 TEST_F(HashTest, CASE003)
@@ -113,19 +113,19 @@ TEST_F(HashTest, CASE003)
 
 	memset(pkey,0x00,sizeof(key));
 	strcpy(key, "bbbb");
-    EXPECT_EQ(1, hash_insert(hashtable,pkey,2, &pout) );
+	EXPECT_EQ(1, hash_insert(hashtable,pkey,2, &pout) );
 
 	memset(pkey,0x00,sizeof(key));
 	strcpy(key, "cccc");
-    EXPECT_EQ(1, hash_insert(hashtable,pkey,3, &pout) );
+	EXPECT_EQ(1, hash_insert(hashtable,pkey,3, &pout) );
 
 	memset(pkey,0x00,sizeof(key));
 	strcpy(key, "dddd");
-    EXPECT_EQ(1, hash_insert(hashtable,pkey,4, &pout) );
+	EXPECT_EQ(1, hash_insert(hashtable,pkey,4, &pout) );
 
 	memset(pkey,0x00,sizeof(key));
 	strcpy(key, "dddd");
-    EXPECT_EQ(0, hash_insert(hashtable,pkey,4, &pout) );
+	EXPECT_EQ(0, hash_insert(hashtable,pkey,4, &pout) );
 
-    EXPECT_EQ(0, hash_terminate(hashtable) );
+	EXPECT_EQ(0, hash_terminate(hashtable) );
 }

@@ -14,7 +14,8 @@ MODULE        = hash_test
 EXECUTE       = $(TEST_BINPATH)/$(MODULE)
 
 CFLAGS        = -g -c
-LFLAGS        = -lgtest_main -lgcov -fprofile-arcs
+#LFLAGS        = -lgtest_main -lgcov -fprofile-arcs
+LFLAGS        = -lgtest_main -fprofile-arcs
 
 INCS=-I$(GTEST_INCPATH) -I$(SRC_INCPATH)
 LIBS=-L$(SRC_LIBPATH) -L$(GTEST_LIBPATH)

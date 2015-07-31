@@ -25,20 +25,20 @@
 
 #include "hash.h"
 
-char initword[HASHSIZE][MAXWORDLEN + 1];		/**< ƒnƒbƒVƒ…ƒm[ƒh”Ôl—pKey(”z—ñ) */
-struct node initrootnode[HASHSIZE] = {NULL, NULL, NULL, 0};	/**< ƒnƒbƒVƒ…ƒm[ƒh”Ôl(”z—ñ) */
+char initword[HASHSIZE][MAXWORDLEN + 1];		/**< ãƒãƒƒã‚·ãƒ¥ãƒãƒ¼ãƒ‰ç•ªäººç”¨Key(é…åˆ—) */
+struct node initrootnode[HASHSIZE] = {NULL, NULL, NULL, 0};	/**< ãƒãƒƒã‚·ãƒ¥ãƒãƒ¼ãƒ‰ç•ªäºº(é…åˆ—) */
 
 long g_maxvalue;
 
 /***************************************************************************//**
  * @fn		void hashaddrdump(nodeptr *p)
- * ƒfƒoƒbƒO—pƒƒ‚ƒŠƒ_ƒ“ƒv
- * ŠÖ”•W€ƒGƒ‰[o—Í‚ÉƒnƒbƒVƒ…ƒe[ƒuƒ‹‚Ì“à—e‚ğo—Í‚·‚é
+ * ãƒ‡ãƒãƒƒã‚°ç”¨ãƒ¡ãƒ¢ãƒªãƒ€ãƒ³ãƒ—
+ * é–¢æ•°æ¨™æº–ã‚¨ãƒ©ãƒ¼å‡ºåŠ›ã«ãƒãƒƒã‚·ãƒ¥ãƒ†ãƒ¼ãƒ–ãƒ«ã®å†…å®¹ã‚’å‡ºåŠ›ã™ã‚‹
  *
- * @param[in]	nodeptr *p		o—Í‚·‚éƒnƒbƒVƒ…ƒe[ƒuƒ‹‚ÌƒAƒhƒŒƒX
- * @retval	‚È‚µ
+ * @param[in]	nodeptr *p		å‡ºåŠ›ã™ã‚‹ãƒãƒƒã‚·ãƒ¥ãƒ†ãƒ¼ãƒ–ãƒ«ã®ã‚¢ãƒ‰ãƒ¬ã‚¹
+ * @retval	ãªã—
  *
- * ### ˆ—“à—e
+ * ### å‡¦ç†å†…å®¹
  *
  ******************************************************************************/
 void hashaddrdump(nodeptr *p){
@@ -59,12 +59,12 @@ void hashaddrdump(nodeptr *p){
 
 /***************************************************************************//**
  * @fn		int hash_impl(char *pchStr)
- * ˆø”‚Ì•¶š—ñ‚ÌƒnƒbƒVƒ…’l‚ğ•Ô‚·
+ * å¼•æ•°ã®æ–‡å­—åˆ—ã®ãƒãƒƒã‚·ãƒ¥å€¤ã‚’è¿”ã™
  *
- * @param[in]	char *pchStr	•¶š—ñ‚Ö‚Ìƒ|ƒCƒ“ƒ^
- * @retval	int	ƒnƒbƒVƒ…’l
+ * @param[in]	char *pchStr	æ–‡å­—åˆ—ã¸ã®ãƒã‚¤ãƒ³ã‚¿
+ * @retval	int	ãƒãƒƒã‚·ãƒ¥å€¤
  *
- * ### ˆ—“à—e
+ * ### å‡¦ç†å†…å®¹
  *
  ******************************************************************************/
 int hash_impl(char *pchStr){
@@ -82,13 +82,13 @@ int (*hash)(char *) = hash_impl;
 
 /***************************************************************************//**
  * @fn		int hash_init_impl(nodeptr *hashtable, ...)
- * ƒnƒbƒVƒ…ƒe[ƒuƒ‹‚ğ‰Šú‰»‚·‚é
+ * ãƒãƒƒã‚·ãƒ¥ãƒ†ãƒ¼ãƒ–ãƒ«ã‚’åˆæœŸåŒ–ã™ã‚‹
  *
- * @param[in]	nodeptr *hashtable	ƒnƒbƒVƒ…ƒe[ƒuƒ‹‚ÌƒAƒhƒŒƒX
- * @param[in]	long	maxvalue	ƒnƒbƒVƒ…ƒe[ƒuƒ‹“àvalue’l‚ÌÅ‘å’l
- * @retval	0	³í
+ * @param[in]	nodeptr *hashtable	ãƒãƒƒã‚·ãƒ¥ãƒ†ãƒ¼ãƒ–ãƒ«ã®ã‚¢ãƒ‰ãƒ¬ã‚¹
+ * @param[in]	long	maxvalue	ãƒãƒƒã‚·ãƒ¥ãƒ†ãƒ¼ãƒ–ãƒ«å†…valueå€¤ã®æœ€å¤§å€¤
+ * @retval	0	æ­£å¸¸
  *
- * ### ˆ—“à—e
+ * ### å‡¦ç†å†…å®¹
  *
  ******************************************************************************/
 int hash_init_impl(nodeptr *hashtable, long maxvalue){
@@ -96,8 +96,8 @@ int hash_init_impl(nodeptr *hashtable, long maxvalue){
 	int i;
 
 	/**
-	 * ˆø”‚æ‚èƒoƒŠƒ…[Å‘å’l‚ğæ“¾
-	 * w’è‚ª‚È‚¯‚ê‚ÎƒfƒtƒHƒ‹ƒg‚Å999999‚ğƒZƒbƒg
+	 * å¼•æ•°ã‚ˆã‚Šãƒãƒªãƒ¥ãƒ¼æœ€å¤§å€¤ã‚’å–å¾—
+	 * æŒ‡å®šãŒãªã‘ã‚Œã°ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã§999999ã‚’ã‚»ãƒƒãƒˆ
 	 */
 	g_maxvalue = maxvalue;
 	if(g_maxvalue == 0){
@@ -105,9 +105,9 @@ int hash_init_impl(nodeptr *hashtable, long maxvalue){
 	}
 
 	/**
-	 * HASHSIZE‚Ì•ª‚¾‚¯nodeptr *hashtable‚ğ‰Šú‰»‚·‚é
-	 * ‰Šú‰»‚É‚ÍAinitrootnode‚ğg—p‚·‚é
-	 * ‚Ü‚½Ahashtable->key‚É‚Íinitword‚ÌƒAƒhƒŒƒX‚ğƒZƒbƒg‚·‚é
+	 * HASHSIZEã®åˆ†ã ã‘nodeptr *hashtableã‚’åˆæœŸåŒ–ã™ã‚‹
+	 * åˆæœŸåŒ–ã«ã¯ã€initrootnodeã‚’ä½¿ç”¨ã™ã‚‹
+	 * ã¾ãŸã€hashtable->keyã«ã¯initwordã®ã‚¢ãƒ‰ãƒ¬ã‚¹ã‚’ã‚»ãƒƒãƒˆã™ã‚‹
 	 */
 	for(i = 0; i < HASHSIZE; i++){
 		hashtable[i] = &initrootnode[i];
@@ -121,14 +121,14 @@ int (*hash_init)(nodeptr *, long) = hash_init_impl;
 
 /***************************************************************************//**
  * @fn		nodeptr hash_find_impl(nodeptr *p, nodeptr *root, char *pKey)
- * ‚Q•ª’Tõ–ØŠÖ”
+ * ï¼’åˆ†æ¢ç´¢æœ¨é–¢æ•°
  *
- * @param[in]	nodeptr *p			ƒnƒbƒVƒ…ƒe[ƒuƒ‹‚ÌƒAƒhƒŒƒX
- * @param[in]	nodeptr *root		ƒ‹[ƒgƒm[ƒh‚ÌƒAƒhƒŒƒX
- * @param[in]	char *pKey			Key’l‚Ì•¶š—ñ‚Ö‚Ìƒ|ƒCƒ“ƒ^
- * @retval	ŒŸõŒ‹‰Ê
+ * @param[in]	nodeptr *p			ãƒãƒƒã‚·ãƒ¥ãƒ†ãƒ¼ãƒ–ãƒ«ã®ã‚¢ãƒ‰ãƒ¬ã‚¹
+ * @param[in]	nodeptr *root		ãƒ«ãƒ¼ãƒˆãƒãƒ¼ãƒ‰ã®ã‚¢ãƒ‰ãƒ¬ã‚¹
+ * @param[in]	char *pKey			Keyå€¤ã®æ–‡å­—åˆ—ã¸ã®ãƒã‚¤ãƒ³ã‚¿
+ * @retval	æ¤œç´¢çµæœ
  *
- * ### ˆ—“à—e
+ * ### å‡¦ç†å†…å®¹
  *
  ******************************************************************************/
 nodeptr * hash_find_impl(nodeptr *currnode, nodeptr *initroot, char *pkey){
@@ -136,7 +136,7 @@ nodeptr * hash_find_impl(nodeptr *currnode, nodeptr *initroot, char *pkey){
 	int cmp;
 
 	/**
-	 * strcmpŠÖ”‚É‚æ‚é•¶š—ñ”äŠr‚É‚æ‚èA‚Q•ª’Tõ–Ø‚ğs‚¤B
+	 * strcmpé–¢æ•°ã«ã‚ˆã‚‹æ–‡å­—åˆ—æ¯”è¼ƒã«ã‚ˆã‚Šã€ï¼’åˆ†æ¢ç´¢æœ¨ã‚’è¡Œã†ã€‚
 	 */
 	while ((cmp = strcmp(pkey, (*currnode)->key)) != 0){
 		if (cmp < 0){
@@ -172,15 +172,15 @@ nodeptr *(*hash_find)(nodeptr *, nodeptr *, char *) = hash_find_impl;
 
 /***************************************************************************//**
  * @fn		nodeptr * hash_malloc_impl(nodeptr *currnode, nodeptr *initroot, char *pKeyStr, int iValue)
- * ‚Q•ª’Tõ–ØmallocŠÖ”
+ * ï¼’åˆ†æ¢ç´¢æœ¨mallocé–¢æ•°
  *
- * @param[in]	nodeptr *p			ƒnƒbƒVƒ…ƒe[ƒuƒ‹‚ÌƒAƒhƒŒƒX
- * @param[in]	nodeptr *root		ƒ‹[ƒgƒm[ƒh‚ÌƒAƒhƒŒƒX
- * @param[in]	char *pKey			Key’l‚Ì•¶š—ñ‚Ö‚Ìƒ|ƒCƒ“ƒ^
- * @param[in]	int iValue			Value’l
- * @retval	ŒŸõŒ‹‰Ê
+ * @param[in]	nodeptr *p			ãƒãƒƒã‚·ãƒ¥ãƒ†ãƒ¼ãƒ–ãƒ«ã®ã‚¢ãƒ‰ãƒ¬ã‚¹
+ * @param[in]	nodeptr *root		ãƒ«ãƒ¼ãƒˆãƒãƒ¼ãƒ‰ã®ã‚¢ãƒ‰ãƒ¬ã‚¹
+ * @param[in]	char *pKey			Keyå€¤ã®æ–‡å­—åˆ—ã¸ã®ãƒã‚¤ãƒ³ã‚¿
+ * @param[in]	int iValue			Valueå€¤
+ * @retval	æ¤œç´¢çµæœ
  *
- * ### ˆ—“à—e
+ * ### å‡¦ç†å†…å®¹
  *
  ******************************************************************************/
 nodeptr * hash_malloc_impl(nodeptr *currnode, nodeptr *initroot, char *pkey, long lvalue){
@@ -188,7 +188,7 @@ nodeptr * hash_malloc_impl(nodeptr *currnode, nodeptr *initroot, char *pkey, lon
 	nodeptr newnode;
 
 	/**
-	 * ƒm[ƒh‚Ìƒƒ‚ƒŠ‚ğŠm•Û‚·‚é
+	 * ãƒãƒ¼ãƒ‰ã®ãƒ¡ãƒ¢ãƒªã‚’ç¢ºä¿ã™ã‚‹
 	 */
 	if ((newnode = fp_malloc(sizeof *newnode)) == NULL
 	  || (newnode->key = fp_malloc(strlen(pkey) + 1)) == NULL) {
@@ -210,16 +210,16 @@ void *(*fp_malloc)(size_t) = malloc;
 
 /***************************************************************************//**
  * @fn		int hash_get_impl(nodeptr *hashtable, char *pKey, nodeptr *out)
- * ƒnƒbƒVƒ…ƒe[ƒuƒ‹‚ğæ“¾‚·‚é
+ * ãƒãƒƒã‚·ãƒ¥ãƒ†ãƒ¼ãƒ–ãƒ«ã‚’å–å¾—ã™ã‚‹
  *
- * @param[in]	nodeptr *hashtable	ƒnƒbƒVƒ…ƒe[ƒuƒ‹‚ÌƒAƒhƒŒƒX
- * @param[in]	char *pKey			Key’l‚Ì•¶š—ñ‚Ö‚Ìƒ|ƒCƒ“ƒ^
- * @param[out]	nodeptr *out		’Ç‰Á‘ÎÛƒm[ƒh‚Ö‚Ìƒ|ƒCƒ“ƒ^
- * @retval	1	³í	Key’l‚ª‘¶İ‚·‚é
- * @retval	0	³í	Key’l‚ª‘¶İ‚µ‚È‚¢
- * @retval	-1	ˆÙí	ˆ—’†‚ÉƒGƒ‰[‚ª”­¶‚µ‚½
+ * @param[in]	nodeptr *hashtable	ãƒãƒƒã‚·ãƒ¥ãƒ†ãƒ¼ãƒ–ãƒ«ã®ã‚¢ãƒ‰ãƒ¬ã‚¹
+ * @param[in]	char *pKey			Keyå€¤ã®æ–‡å­—åˆ—ã¸ã®ãƒã‚¤ãƒ³ã‚¿
+ * @param[out]	nodeptr *out		è¿½åŠ å¯¾è±¡ãƒãƒ¼ãƒ‰ã¸ã®ãƒã‚¤ãƒ³ã‚¿
+ * @retval	1	æ­£å¸¸	Keyå€¤ãŒå­˜åœ¨ã™ã‚‹
+ * @retval	0	æ­£å¸¸	Keyå€¤ãŒå­˜åœ¨ã—ãªã„
+ * @retval	-1	ç•°å¸¸	å‡¦ç†ä¸­ã«ã‚¨ãƒ©ãƒ¼ãŒç™ºç”Ÿã—ãŸ
  *
- * ### ˆ—“à—e
+ * ### å‡¦ç†å†…å®¹
  *
  ******************************************************************************/
 int hash_get_impl(nodeptr *hashtable, char *pkey, nodeptr *out){
@@ -228,10 +228,10 @@ int hash_get_impl(nodeptr *hashtable, char *pkey, nodeptr *out){
 	nodeptr *root;
 
 	/**
-	 * ˆø” *pKey‚ğŠî‚Éhash(char *)ŠÖ”‚É‚æ‚èƒnƒbƒVƒ…’l‚ğ‹‚ßA‚»‚ÌƒnƒbƒVƒ…’l‚ğ
-	 * ”z—ñ‚ÌƒCƒ“ƒfƒbƒNƒX‚Æ‚·‚éƒnƒbƒVƒ…ƒe[ƒuƒ‹‚ğæ“¾‚·‚é
-	 * ‚Ü‚½Aƒf[ƒ^––’[(‚¨‚æ‚Ñ–Ø\‘¢‚Ìæ’[)‚ğ”»’f‚·‚é‚½‚ß‚ÉAinitrootnode‚ÌƒAƒhƒŒƒX
-	 * ‚àæ“¾‚µ‚Ä‚¨‚­B
+	 * å¼•æ•° *pKeyã‚’åŸºã«hash(char *)é–¢æ•°ã«ã‚ˆã‚Šãƒãƒƒã‚·ãƒ¥å€¤ã‚’æ±‚ã‚ã€ãã®ãƒãƒƒã‚·ãƒ¥å€¤ã‚’
+	 * é…åˆ—ã®ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹ã¨ã™ã‚‹ãƒãƒƒã‚·ãƒ¥ãƒ†ãƒ¼ãƒ–ãƒ«ã‚’å–å¾—ã™ã‚‹
+	 * ã¾ãŸã€ãƒ‡ãƒ¼ã‚¿æœ«ç«¯(ãŠã‚ˆã³æœ¨æ§‹é€ ã®å…ˆç«¯)ã‚’åˆ¤æ–­ã™ã‚‹ãŸã‚ã«ã€initrootnodeã®ã‚¢ãƒ‰ãƒ¬ã‚¹
+	 * ã‚‚å–å¾—ã—ã¦ãŠãã€‚
 	 */
 
 	p = &hashtable[hash(pkey)];
@@ -246,13 +246,13 @@ int hash_get_impl(nodeptr *hashtable, char *pkey, nodeptr *out){
 #endif
 
 	/**
-	 * hash_find(nodeptr *, nodeptr *, char *)ŠÖ”‚É‚æ‚è‚Q•ª–Ø‚ğŒŸõ‚·‚éB
+	 * hash_find(nodeptr *, nodeptr *, char *)é–¢æ•°ã«ã‚ˆã‚Šï¼’åˆ†æœ¨ã‚’æ¤œç´¢ã™ã‚‹ã€‚
 	 */
 	p = hash_find(p,root,pkey);
 
 	/**
-	 * ‚·‚Å‚É“o˜^‚³‚ê‚Ä‚¢‚éê‡‚Ío—Í’lnodeptr *out‚Éƒm[ƒh‚ÌƒAƒhƒŒƒX‚ğ
-	 * ƒZƒbƒg‚µ‚Äˆ—‚ğ”²‚¯‚é
+	 * ã™ã§ã«ç™»éŒ²ã•ã‚Œã¦ã„ã‚‹å ´åˆã¯å‡ºåŠ›å€¤nodeptr *outã«ãƒãƒ¼ãƒ‰ã®ã‚¢ãƒ‰ãƒ¬ã‚¹ã‚’
+	 * ã‚»ãƒƒãƒˆã—ã¦å‡¦ç†ã‚’æŠœã‘ã‚‹
 	 */
 	if (*p != *root || *p != 0x00) {
 #ifdef DEBUG
@@ -278,17 +278,17 @@ int (*hash_get)(nodeptr *,char *, nodeptr *) = hash_get_impl;
 
 /***************************************************************************//**
  * @fn		int hash_insert_impl(nodeptr *hashtable, char *pKey, long lVal, nodeptr *out)
- * ƒnƒbƒVƒ…ƒe[ƒuƒ‹‚ğ‘}“ü‚·‚é
+ * ãƒãƒƒã‚·ãƒ¥ãƒ†ãƒ¼ãƒ–ãƒ«ã‚’æŒ¿å…¥ã™ã‚‹
  *
- * @param[in]	nodeptr *hashtable	ƒnƒbƒVƒ…ƒe[ƒuƒ‹‚ÌƒAƒhƒŒƒX
- * @param[in]	char *pKey			Key’l‚Ì•¶š—ñ‚Ö‚Ìƒ|ƒCƒ“ƒ^
- * @param[in]	long lVal			Value’l‚É‘}“ü‚·‚éƒf[ƒ^
- * @param[out]	nodeptr *out		’Ç‰Á‘ÎÛƒm[ƒh‚Ö‚Ìƒ|ƒCƒ“ƒ^
- * @retval	1	³í	‘}“ü¬Œ÷
- * @retval	0	³í	Šù‚ÉKey‚ª‘¶İ‚·‚é
- * @retval	-1	ˆÙí	ˆ—’†‚ÉƒGƒ‰[‚ª”­¶‚µ‚½
+ * @param[in]	nodeptr *hashtable	ãƒãƒƒã‚·ãƒ¥ãƒ†ãƒ¼ãƒ–ãƒ«ã®ã‚¢ãƒ‰ãƒ¬ã‚¹
+ * @param[in]	char *pKey			Keyå€¤ã®æ–‡å­—åˆ—ã¸ã®ãƒã‚¤ãƒ³ã‚¿
+ * @param[in]	long lVal			Valueå€¤ã«æŒ¿å…¥ã™ã‚‹ãƒ‡ãƒ¼ã‚¿
+ * @param[out]	nodeptr *out		è¿½åŠ å¯¾è±¡ãƒãƒ¼ãƒ‰ã¸ã®ãƒã‚¤ãƒ³ã‚¿
+ * @retval	1	æ­£å¸¸	æŒ¿å…¥æˆåŠŸ
+ * @retval	0	æ­£å¸¸	æ—¢ã«KeyãŒå­˜åœ¨ã™ã‚‹
+ * @retval	-1	ç•°å¸¸	å‡¦ç†ä¸­ã«ã‚¨ãƒ©ãƒ¼ãŒç™ºç”Ÿã—ãŸ
  *
- * ### ˆ—“à—e
+ * ### å‡¦ç†å†…å®¹
  *
  ******************************************************************************/
 int hash_insert_impl(nodeptr *hashtable, char *pkey, long lval, nodeptr *out){
@@ -297,10 +297,10 @@ int hash_insert_impl(nodeptr *hashtable, char *pkey, long lval, nodeptr *out){
 	nodeptr *root;
 
 	/**
-	 * ˆø” *pKey‚ğŠî‚Éhash(char *)ŠÖ”‚É‚æ‚èƒnƒbƒVƒ…’l‚ğ‹‚ßA‚»‚ÌƒnƒbƒVƒ…’l‚ğ
-	 * ”z—ñ‚ÌƒCƒ“ƒfƒbƒNƒX‚Æ‚·‚éƒnƒbƒVƒ…ƒe[ƒuƒ‹‚ğæ“¾‚·‚é
-	 * ‚Ü‚½Aƒf[ƒ^––’[(‚¨‚æ‚Ñ–Ø\‘¢‚Ìæ’[)‚ğ”»’f‚·‚é‚½‚ß‚ÉAinitrootnode‚ÌƒAƒhƒŒƒX
-	 * ‚àæ“¾‚µ‚Ä‚¨‚­B
+	 * å¼•æ•° *pKeyã‚’åŸºã«hash(char *)é–¢æ•°ã«ã‚ˆã‚Šãƒãƒƒã‚·ãƒ¥å€¤ã‚’æ±‚ã‚ã€ãã®ãƒãƒƒã‚·ãƒ¥å€¤ã‚’
+	 * é…åˆ—ã®ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹ã¨ã™ã‚‹ãƒãƒƒã‚·ãƒ¥ãƒ†ãƒ¼ãƒ–ãƒ«ã‚’å–å¾—ã™ã‚‹
+	 * ã¾ãŸã€ãƒ‡ãƒ¼ã‚¿æœ«ç«¯(ãŠã‚ˆã³æœ¨æ§‹é€ ã®å…ˆç«¯)ã‚’åˆ¤æ–­ã™ã‚‹ãŸã‚ã«ã€initrootnodeã®ã‚¢ãƒ‰ãƒ¬ã‚¹
+	 * ã‚‚å–å¾—ã—ã¦ãŠãã€‚
 	 */
 
 	p = &hashtable[hash(pkey)];
@@ -315,13 +315,13 @@ int hash_insert_impl(nodeptr *hashtable, char *pkey, long lval, nodeptr *out){
 #endif
 
 	/**
-	 * hash_find(nodeptr *, nodeptr *, char *)ŠÖ”‚É‚æ‚è‚Q•ª–Ø‚ğŒŸõ‚·‚éB
+	 * hash_find(nodeptr *, nodeptr *, char *)é–¢æ•°ã«ã‚ˆã‚Šï¼’åˆ†æœ¨ã‚’æ¤œç´¢ã™ã‚‹ã€‚
 	 */
 	p = hash_find(p,root,pkey);
 
 	/**
-	 * ‚·‚Å‚É“o˜^‚³‚ê‚Ä‚¢‚éê‡‚Íˆ—‚ğ”²‚¯‚é
-	 * value’l‚ÍXV‚µ‚È‚¢
+	 * ã™ã§ã«ç™»éŒ²ã•ã‚Œã¦ã„ã‚‹å ´åˆã¯å‡¦ç†ã‚’æŠœã‘ã‚‹
+	 * valueå€¤ã¯æ›´æ–°ã—ãªã„
 	 */
 	if (*p != *root || *p != 0x00) {
 #ifdef DEBUG
@@ -334,7 +334,7 @@ int hash_insert_impl(nodeptr *hashtable, char *pkey, long lval, nodeptr *out){
 
 
 	/**
-	 * ‚Ü‚¾“o˜^‚³‚ê‚Ä‚¢‚È‚¢•¶š—ñ‚Ìê‡Aƒm[ƒh‚É’Ç‰Á‚·‚é
+	 * ã¾ã ç™»éŒ²ã•ã‚Œã¦ã„ãªã„æ–‡å­—åˆ—ã®å ´åˆã€ãƒãƒ¼ãƒ‰ã«è¿½åŠ ã™ã‚‹
 	 */
 	p = hash_malloc(p, root, pkey, lval);
 	if (p == (nodeptr *)-1) {
@@ -355,17 +355,17 @@ int (*hash_insert)(nodeptr *,char *,long, nodeptr *) = hash_insert_impl;
 
 /***************************************************************************//**
  * @fn		int hash_update_impl(nodeptr *hashtable, char *pKey, long lVal, nodeptr *out)
- * ƒnƒbƒVƒ…ƒe[ƒuƒ‹‚ğXV‚·‚é
+ * ãƒãƒƒã‚·ãƒ¥ãƒ†ãƒ¼ãƒ–ãƒ«ã‚’æ›´æ–°ã™ã‚‹
  *
- * @param[in]	nodeptr *hashtable	ƒnƒbƒVƒ…ƒe[ƒuƒ‹‚ÌƒAƒhƒŒƒX
- * @param[in]	char *pKey			Key’l‚Ì•¶š—ñ‚Ö‚Ìƒ|ƒCƒ“ƒ^
- * @param[in]	long lVal			Value’l‚É‘}“ü‚·‚éƒf[ƒ^
- * @param[out]	nodeptr *out		’Ç‰Á‘ÎÛƒm[ƒh‚Ö‚Ìƒ|ƒCƒ“ƒ^
- * @retval	1	³í	XV¬Œ÷
- * @retval	0	³í	Key’l‚ª‘¶İ‚µ‚È‚¢
- * @retval	-1	ˆÙí	ˆ—’†‚ÉƒGƒ‰[‚ª”­¶‚µ‚½
+ * @param[in]	nodeptr *hashtable	ãƒãƒƒã‚·ãƒ¥ãƒ†ãƒ¼ãƒ–ãƒ«ã®ã‚¢ãƒ‰ãƒ¬ã‚¹
+ * @param[in]	char *pKey			Keyå€¤ã®æ–‡å­—åˆ—ã¸ã®ãƒã‚¤ãƒ³ã‚¿
+ * @param[in]	long lVal			Valueå€¤ã«æŒ¿å…¥ã™ã‚‹ãƒ‡ãƒ¼ã‚¿
+ * @param[out]	nodeptr *out		è¿½åŠ å¯¾è±¡ãƒãƒ¼ãƒ‰ã¸ã®ãƒã‚¤ãƒ³ã‚¿
+ * @retval	1	æ­£å¸¸	æ›´æ–°æˆåŠŸ
+ * @retval	0	æ­£å¸¸	Keyå€¤ãŒå­˜åœ¨ã—ãªã„
+ * @retval	-1	ç•°å¸¸	å‡¦ç†ä¸­ã«ã‚¨ãƒ©ãƒ¼ãŒç™ºç”Ÿã—ãŸ
  *
- * ### ˆ—“à—e
+ * ### å‡¦ç†å†…å®¹
  *
  ******************************************************************************/
 int hash_update_impl(nodeptr *hashtable, char *pkey, long lval, nodeptr *out){
@@ -374,10 +374,10 @@ int hash_update_impl(nodeptr *hashtable, char *pkey, long lval, nodeptr *out){
 	nodeptr *root;
 
 	/**
-	 * ˆø” *pKey‚ğŠî‚Éhash(char *)ŠÖ”‚É‚æ‚èƒnƒbƒVƒ…’l‚ğ‹‚ßA‚»‚ÌƒnƒbƒVƒ…’l‚ğ
-	 * ”z—ñ‚ÌƒCƒ“ƒfƒbƒNƒX‚Æ‚·‚éƒnƒbƒVƒ…ƒe[ƒuƒ‹‚ğæ“¾‚·‚é
-	 * ‚Ü‚½Aƒf[ƒ^––’[(‚¨‚æ‚Ñ–Ø\‘¢‚Ìæ’[)‚ğ”»’f‚·‚é‚½‚ß‚ÉAinitrootnode‚ÌƒAƒhƒŒƒX
-	 * ‚àæ“¾‚µ‚Ä‚¨‚­B
+	 * å¼•æ•° *pKeyã‚’åŸºã«hash(char *)é–¢æ•°ã«ã‚ˆã‚Šãƒãƒƒã‚·ãƒ¥å€¤ã‚’æ±‚ã‚ã€ãã®ãƒãƒƒã‚·ãƒ¥å€¤ã‚’
+	 * é…åˆ—ã®ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹ã¨ã™ã‚‹ãƒãƒƒã‚·ãƒ¥ãƒ†ãƒ¼ãƒ–ãƒ«ã‚’å–å¾—ã™ã‚‹
+	 * ã¾ãŸã€ãƒ‡ãƒ¼ã‚¿æœ«ç«¯(ãŠã‚ˆã³æœ¨æ§‹é€ ã®å…ˆç«¯)ã‚’åˆ¤æ–­ã™ã‚‹ãŸã‚ã«ã€initrootnodeã®ã‚¢ãƒ‰ãƒ¬ã‚¹
+	 * ã‚‚å–å¾—ã—ã¦ãŠãã€‚
 	 */
 
 	p = &hashtable[hash(pkey)];
@@ -392,12 +392,12 @@ int hash_update_impl(nodeptr *hashtable, char *pkey, long lval, nodeptr *out){
 #endif
 
 	/**
-	 * hash_find(nodeptr *, nodeptr *, char *)ŠÖ”‚É‚æ‚è‚Q•ª–Ø‚ğŒŸõ‚·‚éB
+	 * hash_find(nodeptr *, nodeptr *, char *)é–¢æ•°ã«ã‚ˆã‚Šï¼’åˆ†æœ¨ã‚’æ¤œç´¢ã™ã‚‹ã€‚
 	 */
 	p = hash_find(p,root,pkey);
 
 	/**
-	 * ‚·‚Å‚É“o˜^‚³‚ê‚Ä‚¢‚éê‡‚Íˆ—‚ğ”²‚¯‚é
+	 * ã™ã§ã«ç™»éŒ²ã•ã‚Œã¦ã„ã‚‹å ´åˆã¯å‡¦ç†ã‚’æŠœã‘ã‚‹
 	 */
 	if (*p != *root || *p != 0x00) {
 #ifdef DEBUG
@@ -424,17 +424,17 @@ int (*hash_update)(nodeptr *,char *,long, nodeptr *) = hash_update_impl;
 
 /***************************************************************************//**
  * @fn		int hash_upsert_impl(nodeptr *hashtable, char *pKey, long lVal, nodeptr *out)
- * ƒnƒbƒVƒ…ƒe[ƒuƒ‹‚ÉAƒL[‚ª‘¶İ‚µ‚È‚¯‚ê‚Îinsert‚µAƒL[‚ª‘¶İ‚·‚ê‚Îupdate‚·‚é
+ * ãƒãƒƒã‚·ãƒ¥ãƒ†ãƒ¼ãƒ–ãƒ«ã«ã€ã‚­ãƒ¼ãŒå­˜åœ¨ã—ãªã‘ã‚Œã°insertã—ã€ã‚­ãƒ¼ãŒå­˜åœ¨ã™ã‚Œã°updateã™ã‚‹
  *
- * @param[in]	nodeptr *hashtable	ƒnƒbƒVƒ…ƒe[ƒuƒ‹‚ÌƒAƒhƒŒƒX
- * @param[in]	char *pKey			Key’l‚Ì•¶š—ñ‚Ö‚Ìƒ|ƒCƒ“ƒ^
- * @param[in]	long lVal			Value’l‚É‘}“ü‚·‚éƒf[ƒ^
- * @param[out]	nodeptr *out		’Ç‰Á‘ÎÛƒm[ƒh‚Ö‚Ìƒ|ƒCƒ“ƒ^
- * @retval	1	³í	‘}“ü¬Œ÷
- * @retval	0	³í	Šù‚ÉKey‚ª‘¶İ‚·‚é
- * @retval	-1	ˆÙí	ˆ—’†‚ÉƒGƒ‰[‚ª”­¶‚µ‚½
+ * @param[in]	nodeptr *hashtable	ãƒãƒƒã‚·ãƒ¥ãƒ†ãƒ¼ãƒ–ãƒ«ã®ã‚¢ãƒ‰ãƒ¬ã‚¹
+ * @param[in]	char *pKey			Keyå€¤ã®æ–‡å­—åˆ—ã¸ã®ãƒã‚¤ãƒ³ã‚¿
+ * @param[in]	long lVal			Valueå€¤ã«æŒ¿å…¥ã™ã‚‹ãƒ‡ãƒ¼ã‚¿
+ * @param[out]	nodeptr *out		è¿½åŠ å¯¾è±¡ãƒãƒ¼ãƒ‰ã¸ã®ãƒã‚¤ãƒ³ã‚¿
+ * @retval	1	æ­£å¸¸	æŒ¿å…¥æˆåŠŸ
+ * @retval	0	æ­£å¸¸	æ—¢ã«KeyãŒå­˜åœ¨ã™ã‚‹
+ * @retval	-1	ç•°å¸¸	å‡¦ç†ä¸­ã«ã‚¨ãƒ©ãƒ¼ãŒç™ºç”Ÿã—ãŸ
  *
- * ### ˆ—“à—e
+ * ### å‡¦ç†å†…å®¹
  *
  ******************************************************************************/
 int hash_upsert_impl(nodeptr *hashtable, char *pkey, long lval, nodeptr *out){
@@ -443,10 +443,10 @@ int hash_upsert_impl(nodeptr *hashtable, char *pkey, long lval, nodeptr *out){
 	nodeptr *root;
 
 	/**
-	 * ˆø” *pKey‚ğŠî‚Éhash(char *)ŠÖ”‚É‚æ‚èƒnƒbƒVƒ…’l‚ğ‹‚ßA‚»‚ÌƒnƒbƒVƒ…’l‚ğ
-	 * ”z—ñ‚ÌƒCƒ“ƒfƒbƒNƒX‚Æ‚·‚éƒnƒbƒVƒ…ƒe[ƒuƒ‹‚ğæ“¾‚·‚é
-	 * ‚Ü‚½Aƒf[ƒ^––’[(‚¨‚æ‚Ñ–Ø\‘¢‚Ìæ’[)‚ğ”»’f‚·‚é‚½‚ß‚ÉAinitrootnode‚ÌƒAƒhƒŒƒX
-	 * ‚àæ“¾‚µ‚Ä‚¨‚­B
+	 * å¼•æ•° *pKeyã‚’åŸºã«hash(char *)é–¢æ•°ã«ã‚ˆã‚Šãƒãƒƒã‚·ãƒ¥å€¤ã‚’æ±‚ã‚ã€ãã®ãƒãƒƒã‚·ãƒ¥å€¤ã‚’
+	 * é…åˆ—ã®ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹ã¨ã™ã‚‹ãƒãƒƒã‚·ãƒ¥ãƒ†ãƒ¼ãƒ–ãƒ«ã‚’å–å¾—ã™ã‚‹
+	 * ã¾ãŸã€ãƒ‡ãƒ¼ã‚¿æœ«ç«¯(ãŠã‚ˆã³æœ¨æ§‹é€ ã®å…ˆç«¯)ã‚’åˆ¤æ–­ã™ã‚‹ãŸã‚ã«ã€initrootnodeã®ã‚¢ãƒ‰ãƒ¬ã‚¹
+	 * ã‚‚å–å¾—ã—ã¦ãŠãã€‚
 	 */
 
 	p = &hashtable[hash(pkey)];
@@ -461,12 +461,12 @@ int hash_upsert_impl(nodeptr *hashtable, char *pkey, long lval, nodeptr *out){
 #endif
 
 	/**
-	 * hash_find(nodeptr *, nodeptr *, char *)ŠÖ”‚É‚æ‚è‚Q•ª–Ø‚ğŒŸõ‚·‚éB
+	 * hash_find(nodeptr *, nodeptr *, char *)é–¢æ•°ã«ã‚ˆã‚Šï¼’åˆ†æœ¨ã‚’æ¤œç´¢ã™ã‚‹ã€‚
 	 */
 	p = hash_find(p,root,pkey);
 
 	/**
-	 * ‚·‚Å‚É“o˜^‚³‚ê‚Ä‚¢‚éê‡‚Íˆ—‚ğ”²‚¯‚é
+	 * ã™ã§ã«ç™»éŒ²ã•ã‚Œã¦ã„ã‚‹å ´åˆã¯å‡¦ç†ã‚’æŠœã‘ã‚‹
 	 */
 	if (*p != *root || *p != 0x00) {
 		(*p)->val = lval;
@@ -480,7 +480,7 @@ int hash_upsert_impl(nodeptr *hashtable, char *pkey, long lval, nodeptr *out){
 
 
 	/**
-	 * ‚Ü‚¾“o˜^‚³‚ê‚Ä‚¢‚È‚¢•¶š—ñ‚Ìê‡Aƒm[ƒh‚É’Ç‰Á‚·‚é
+	 * ã¾ã ç™»éŒ²ã•ã‚Œã¦ã„ãªã„æ–‡å­—åˆ—ã®å ´åˆã€ãƒãƒ¼ãƒ‰ã«è¿½åŠ ã™ã‚‹
 	 */
 	p = hash_malloc(p, root, pkey, lval);
 	if (p == (nodeptr *)-1) {
@@ -502,15 +502,15 @@ int (*hash_upsert)(nodeptr *,char *,long, nodeptr *) = hash_upsert_impl;
 
 /***************************************************************************//**
  * @fn		int hash_update_plusone_impl(nodeptr *hashtable, char *pKey, nodeptr *out)
- * ƒnƒbƒVƒ…ƒe[ƒuƒ‹‚ÌƒoƒŠƒ…[’l‚ğ{‚P‚·‚é
+ * ãƒãƒƒã‚·ãƒ¥ãƒ†ãƒ¼ãƒ–ãƒ«ã®ãƒãƒªãƒ¥ãƒ¼å€¤ã‚’ï¼‹ï¼‘ã™ã‚‹
  *
- * @param[in]	nodeptr *hashtable	ƒnƒbƒVƒ…ƒe[ƒuƒ‹‚ÌƒAƒhƒŒƒX
- * @param[in]	char *pKey			Key’l‚Ì•¶š—ñ‚Ö‚Ìƒ|ƒCƒ“ƒ^
- * @param[out]	nodeptr *out		’Ç‰Á‘ÎÛƒm[ƒh‚Ö‚Ìƒ|ƒCƒ“ƒ^
- * @retval	1	³í	XV¬Œ÷
- * @retval	0	³í	Key’l‚ª‘¶İ‚µ‚È‚¢
+ * @param[in]	nodeptr *hashtable	ãƒãƒƒã‚·ãƒ¥ãƒ†ãƒ¼ãƒ–ãƒ«ã®ã‚¢ãƒ‰ãƒ¬ã‚¹
+ * @param[in]	char *pKey			Keyå€¤ã®æ–‡å­—åˆ—ã¸ã®ãƒã‚¤ãƒ³ã‚¿
+ * @param[out]	nodeptr *out		è¿½åŠ å¯¾è±¡ãƒãƒ¼ãƒ‰ã¸ã®ãƒã‚¤ãƒ³ã‚¿
+ * @retval	1	æ­£å¸¸	æ›´æ–°æˆåŠŸ
+ * @retval	0	æ­£å¸¸	Keyå€¤ãŒå­˜åœ¨ã—ãªã„
  *
- * ### ˆ—“à—e
+ * ### å‡¦ç†å†…å®¹
  *
  ******************************************************************************/
 int hash_update_plusone_impl(nodeptr *hashtable, char *pkey, nodeptr *out){
@@ -519,10 +519,10 @@ int hash_update_plusone_impl(nodeptr *hashtable, char *pkey, nodeptr *out){
 	nodeptr *root;
 
 	/**
-	 * ˆø” *pKey‚ğŠî‚Éhash(char *)ŠÖ”‚É‚æ‚èƒnƒbƒVƒ…’l‚ğ‹‚ßA‚»‚ÌƒnƒbƒVƒ…’l‚ğ
-	 * ”z—ñ‚ÌƒCƒ“ƒfƒbƒNƒX‚Æ‚·‚éƒnƒbƒVƒ…ƒe[ƒuƒ‹‚ğæ“¾‚·‚é
-	 * ‚Ü‚½Aƒf[ƒ^––’[(‚¨‚æ‚Ñ–Ø\‘¢‚Ìæ’[)‚ğ”»’f‚·‚é‚½‚ß‚ÉAinitrootnode‚ÌƒAƒhƒŒƒX
-	 * ‚àæ“¾‚µ‚Ä‚¨‚­B
+	 * å¼•æ•° *pKeyã‚’åŸºã«hash(char *)é–¢æ•°ã«ã‚ˆã‚Šãƒãƒƒã‚·ãƒ¥å€¤ã‚’æ±‚ã‚ã€ãã®ãƒãƒƒã‚·ãƒ¥å€¤ã‚’
+	 * é…åˆ—ã®ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹ã¨ã™ã‚‹ãƒãƒƒã‚·ãƒ¥ãƒ†ãƒ¼ãƒ–ãƒ«ã‚’å–å¾—ã™ã‚‹
+	 * ã¾ãŸã€ãƒ‡ãƒ¼ã‚¿æœ«ç«¯(ãŠã‚ˆã³æœ¨æ§‹é€ ã®å…ˆç«¯)ã‚’åˆ¤æ–­ã™ã‚‹ãŸã‚ã«ã€initrootnodeã®ã‚¢ãƒ‰ãƒ¬ã‚¹
+	 * ã‚‚å–å¾—ã—ã¦ãŠãã€‚
 	 */
 
 	p = &hashtable[hash(pkey)];
@@ -538,12 +538,12 @@ int hash_update_plusone_impl(nodeptr *hashtable, char *pkey, nodeptr *out){
 #endif
 
 	/**
-	 * hash_find(nodeptr *, nodeptr *, char *)ŠÖ”‚É‚æ‚è‚Q•ª–Ø‚ğŒŸõ‚·‚éB
+	 * hash_find(nodeptr *, nodeptr *, char *)é–¢æ•°ã«ã‚ˆã‚Šï¼’åˆ†æœ¨ã‚’æ¤œç´¢ã™ã‚‹ã€‚
 	 */
 	p = hash_find(p,root,pkey);
 
 	/**
-	 * ‚·‚Å‚É“o˜^‚³‚ê‚Ä‚¢‚éê‡‚Íˆ—‚ğ”²‚¯‚é
+	 * ã™ã§ã«ç™»éŒ²ã•ã‚Œã¦ã„ã‚‹å ´åˆã¯å‡¦ç†ã‚’æŠœã‘ã‚‹
 	 */
 	if (*p != *root || *p != 0x00) {
 		(*p)->val++;
@@ -573,17 +573,17 @@ int (*hash_update_plusone)(nodeptr *,char *, nodeptr *) = hash_update_plusone_im
 
 /***************************************************************************//**
  * @fn		int hash_upsert_plusone_impl(nodeptr *hashtable, char *pKey, nodeptr *out)
- * ƒnƒbƒVƒ…ƒe[ƒuƒ‹‚ÉAƒL[‚ª‘¶İ‚µ‚È‚¯‚ê‚ÎƒoƒŠƒ…[’l‚ğ‚P‚Åinsert‚µA
- * ƒL[‚ª‘¶İ‚·‚ê‚ÎƒoƒŠƒ…[’l‚ğ{‚P‚·‚é
+ * ãƒãƒƒã‚·ãƒ¥ãƒ†ãƒ¼ãƒ–ãƒ«ã«ã€ã‚­ãƒ¼ãŒå­˜åœ¨ã—ãªã‘ã‚Œã°ãƒãƒªãƒ¥ãƒ¼å€¤ã‚’ï¼‘ã§insertã—ã€
+ * ã‚­ãƒ¼ãŒå­˜åœ¨ã™ã‚Œã°ãƒãƒªãƒ¥ãƒ¼å€¤ã‚’ï¼‹ï¼‘ã™ã‚‹
  *
- * @param[in]	nodeptr *hashtable	ƒnƒbƒVƒ…ƒe[ƒuƒ‹‚ÌƒAƒhƒŒƒX
- * @param[in]	char *pKey			Key’l‚Ì•¶š—ñ‚Ö‚Ìƒ|ƒCƒ“ƒ^
- * @param[out]	nodeptr *out		’Ç‰Á‘ÎÛƒm[ƒh‚Ö‚Ìƒ|ƒCƒ“ƒ^
- * @retval	1	³í	‘}“ü¬Œ÷
- * @retval	0	³í	Šù‚ÉKey‚ª‘¶İ‚·‚é
- * @retval	-1	ˆÙí	ˆ—’†‚ÉƒGƒ‰[‚ª”­¶‚µ‚½
+ * @param[in]	nodeptr *hashtable	ãƒãƒƒã‚·ãƒ¥ãƒ†ãƒ¼ãƒ–ãƒ«ã®ã‚¢ãƒ‰ãƒ¬ã‚¹
+ * @param[in]	char *pKey			Keyå€¤ã®æ–‡å­—åˆ—ã¸ã®ãƒã‚¤ãƒ³ã‚¿
+ * @param[out]	nodeptr *out		è¿½åŠ å¯¾è±¡ãƒãƒ¼ãƒ‰ã¸ã®ãƒã‚¤ãƒ³ã‚¿
+ * @retval	1	æ­£å¸¸	æŒ¿å…¥æˆåŠŸ
+ * @retval	0	æ­£å¸¸	æ—¢ã«KeyãŒå­˜åœ¨ã™ã‚‹
+ * @retval	-1	ç•°å¸¸	å‡¦ç†ä¸­ã«ã‚¨ãƒ©ãƒ¼ãŒç™ºç”Ÿã—ãŸ
  *
- * ### ˆ—“à—e
+ * ### å‡¦ç†å†…å®¹
  *
  ******************************************************************************/
 int hash_upsert_plusone_impl(nodeptr *hashtable, char *pkey, nodeptr *out){
@@ -592,10 +592,10 @@ int hash_upsert_plusone_impl(nodeptr *hashtable, char *pkey, nodeptr *out){
 	nodeptr *root;
 
 	/**
-	 * ˆø” *pKey‚ğŠî‚Éhash(char *)ŠÖ”‚É‚æ‚èƒnƒbƒVƒ…’l‚ğ‹‚ßA‚»‚ÌƒnƒbƒVƒ…’l‚ğ
-	 * ”z—ñ‚ÌƒCƒ“ƒfƒbƒNƒX‚Æ‚·‚éƒnƒbƒVƒ…ƒe[ƒuƒ‹‚ğæ“¾‚·‚é
-	 * ‚Ü‚½Aƒf[ƒ^––’[(‚¨‚æ‚Ñ–Ø\‘¢‚Ìæ’[)‚ğ”»’f‚·‚é‚½‚ß‚ÉAinitrootnode‚ÌƒAƒhƒŒƒX
-	 * ‚àæ“¾‚µ‚Ä‚¨‚­B
+	 * å¼•æ•° *pKeyã‚’åŸºã«hash(char *)é–¢æ•°ã«ã‚ˆã‚Šãƒãƒƒã‚·ãƒ¥å€¤ã‚’æ±‚ã‚ã€ãã®ãƒãƒƒã‚·ãƒ¥å€¤ã‚’
+	 * é…åˆ—ã®ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹ã¨ã™ã‚‹ãƒãƒƒã‚·ãƒ¥ãƒ†ãƒ¼ãƒ–ãƒ«ã‚’å–å¾—ã™ã‚‹
+	 * ã¾ãŸã€ãƒ‡ãƒ¼ã‚¿æœ«ç«¯(ãŠã‚ˆã³æœ¨æ§‹é€ ã®å…ˆç«¯)ã‚’åˆ¤æ–­ã™ã‚‹ãŸã‚ã«ã€initrootnodeã®ã‚¢ãƒ‰ãƒ¬ã‚¹
+	 * ã‚‚å–å¾—ã—ã¦ãŠãã€‚
 	 */
 
 	p = &hashtable[hash(pkey)];
@@ -611,12 +611,12 @@ int hash_upsert_plusone_impl(nodeptr *hashtable, char *pkey, nodeptr *out){
 #endif
 
 	/**
-	 * hash_find(nodeptr *, nodeptr *, char *)ŠÖ”‚É‚æ‚è‚Q•ª–Ø‚ğŒŸõ‚·‚éB
+	 * hash_find(nodeptr *, nodeptr *, char *)é–¢æ•°ã«ã‚ˆã‚Šï¼’åˆ†æœ¨ã‚’æ¤œç´¢ã™ã‚‹ã€‚
 	 */
 	p = hash_find(p,root,pkey);
 
 	/**
-	 * ‚·‚Å‚É“o˜^‚³‚ê‚Ä‚¢‚éê‡‚Íˆ—‚ğ”²‚¯‚é
+	 * ã™ã§ã«ç™»éŒ²ã•ã‚Œã¦ã„ã‚‹å ´åˆã¯å‡¦ç†ã‚’æŠœã‘ã‚‹
 	 */
 	if (*p != *root || *p != 0x00) {
 		(*p)->val++;
@@ -633,7 +633,7 @@ int hash_upsert_plusone_impl(nodeptr *hashtable, char *pkey, nodeptr *out){
 
 
 	/**
-	 * ‚Ü‚¾“o˜^‚³‚ê‚Ä‚¢‚È‚¢•¶š—ñ‚Ìê‡Aƒm[ƒh‚É’Ç‰Á‚·‚é
+	 * ã¾ã ç™»éŒ²ã•ã‚Œã¦ã„ãªã„æ–‡å­—åˆ—ã®å ´åˆã€ãƒãƒ¼ãƒ‰ã«è¿½åŠ ã™ã‚‹
 	 */
 	p = hash_malloc(p, root, pkey, 1);
 	if (p == (nodeptr *)-1) {
@@ -654,12 +654,12 @@ int (*hash_upsert_plusone)(nodeptr *,char *, nodeptr *) = hash_upsert_plusone_im
 
 /***************************************************************************//**
  * @fn		int hash_terminate_impl(nodeptr *hashtable)
- * ƒnƒbƒVƒ…ƒe[ƒuƒ‹‘Sƒƒ‚ƒŠ‰ğ•ú
+ * ãƒãƒƒã‚·ãƒ¥ãƒ†ãƒ¼ãƒ–ãƒ«å…¨ãƒ¡ãƒ¢ãƒªè§£æ”¾
  *
- * @param[in]	nodeptr *hashtable	ƒnƒbƒVƒ…ƒe[ƒuƒ‹‚ÌƒAƒhƒŒƒX
- * @retval	0	³í	‘}“üŠ®—¹
+ * @param[in]	nodeptr *hashtable	ãƒãƒƒã‚·ãƒ¥ãƒ†ãƒ¼ãƒ–ãƒ«ã®ã‚¢ãƒ‰ãƒ¬ã‚¹
+ * @retval	0	æ­£å¸¸	æŒ¿å…¥å®Œäº†
  *
- * ### ˆ—“à—e
+ * ### å‡¦ç†å†…å®¹
  *
  ******************************************************************************/
 int hash_terminate_impl(nodeptr *hashtable){
@@ -668,7 +668,7 @@ int hash_terminate_impl(nodeptr *hashtable){
 
 	nodeptr p;
 /**
- * ƒnƒbƒVƒ…ƒe[ƒuƒ‹‚ğƒTƒCƒY•ªƒƒ‚ƒŠ‰ğ•úˆ—‚ğs‚¤
+ * ãƒãƒƒã‚·ãƒ¥ãƒ†ãƒ¼ãƒ–ãƒ«ã‚’ã‚µã‚¤ã‚ºåˆ†ãƒ¡ãƒ¢ãƒªè§£æ”¾å‡¦ç†ã‚’è¡Œã†
  */
 	for(i = 0; i < HASHSIZE; i++){
 #ifdef DEBUG2
@@ -695,13 +695,13 @@ int (*hash_terminate)(nodeptr *) = hash_terminate_impl;
 
 /***************************************************************************//**
  * @fn		int hash_free_impl(nodeptr *hashtable, nodeptr *initroot)
- * ƒnƒbƒVƒ…ƒe[ƒuƒ‹‚Ìƒm[ƒh‚Ìƒƒ‚ƒŠ‚ğ‰ğ•ú
+ * ãƒãƒƒã‚·ãƒ¥ãƒ†ãƒ¼ãƒ–ãƒ«ã®ãƒãƒ¼ãƒ‰ã®ãƒ¡ãƒ¢ãƒªã‚’è§£æ”¾
  *
- * @param[in]	nodeptr *hashtable	ƒnƒbƒVƒ…ƒe[ƒuƒ‹‚ÌƒAƒhƒŒƒX
- * @param[in]	nodeptr *initroot	æ“ªƒm[ƒh(initrootnode)‚ÌƒAƒhƒŒƒX
- * @retval	0	³í	‘}“üŠ®—¹
+ * @param[in]	nodeptr *hashtable	ãƒãƒƒã‚·ãƒ¥ãƒ†ãƒ¼ãƒ–ãƒ«ã®ã‚¢ãƒ‰ãƒ¬ã‚¹
+ * @param[in]	nodeptr *initroot	å…ˆé ­ãƒãƒ¼ãƒ‰(initrootnode)ã®ã‚¢ãƒ‰ãƒ¬ã‚¹
+ * @retval	0	æ­£å¸¸	æŒ¿å…¥å®Œäº†
  *
- * ### ˆ—“à—e
+ * ### å‡¦ç†å†…å®¹
  *
  ******************************************************************************/
 int hash_free_impl(nodeptr *hashtable, nodeptr *initroot){
@@ -709,9 +709,9 @@ int hash_free_impl(nodeptr *hashtable, nodeptr *initroot){
 	nodeptr *p;
 
 	/**
-	 * left‚Éƒm[ƒh‚ª‚ ‚é‚©‚Ç‚¤‚©’²‚×‚é
-	 * ƒm[ƒh‚ª‚ ‚Á‚½‚çÄ‹A“I‚Éhash_free‚ğƒR[ƒ‹‚µAƒm[ƒh––’[‚Ü‚Å‚³‚©‚Ì‚Ú‚é
-	 * ƒm[ƒh‚ª‰ğ•ú‚³‚ê‚½‚çleft‚Énull‚ğƒZƒbƒg‚·‚é
+	 * leftã«ãƒãƒ¼ãƒ‰ãŒã‚ã‚‹ã‹ã©ã†ã‹èª¿ã¹ã‚‹
+	 * ãƒãƒ¼ãƒ‰ãŒã‚ã£ãŸã‚‰å†å¸°çš„ã«hash_freeã‚’ã‚³ãƒ¼ãƒ«ã—ã€ãƒãƒ¼ãƒ‰æœ«ç«¯ã¾ã§ã•ã‹ã®ã¼ã‚‹
+	 * ãƒãƒ¼ãƒ‰ãŒè§£æ”¾ã•ã‚ŒãŸã‚‰leftã«nullã‚’ã‚»ãƒƒãƒˆã™ã‚‹
 	 */
 	p = hashtable;
 	p = &((*p)->left );
@@ -732,9 +732,9 @@ int hash_free_impl(nodeptr *hashtable, nodeptr *initroot){
 
 
 	/**
-	 * right‚Éƒm[ƒh‚ª‚ ‚é‚©‚Ç‚¤‚©’²‚×‚é
-	 * ƒm[ƒh‚ª‚ ‚Á‚½‚çÄ‹A“I‚Éhash_free‚ğƒR[ƒ‹‚µAƒm[ƒh––’[‚Ü‚Å‚³‚©‚Ì‚Ú‚é
-	 * ƒm[ƒh‚ª‰ğ•ú‚³‚ê‚½‚çright‚Énull‚ğƒZƒbƒg‚·‚é
+	 * rightã«ãƒãƒ¼ãƒ‰ãŒã‚ã‚‹ã‹ã©ã†ã‹èª¿ã¹ã‚‹
+	 * ãƒãƒ¼ãƒ‰ãŒã‚ã£ãŸã‚‰å†å¸°çš„ã«hash_freeã‚’ã‚³ãƒ¼ãƒ«ã—ã€ãƒãƒ¼ãƒ‰æœ«ç«¯ã¾ã§ã•ã‹ã®ã¼ã‚‹
+	 * ãƒãƒ¼ãƒ‰ãŒè§£æ”¾ã•ã‚ŒãŸã‚‰rightã«nullã‚’ã‚»ãƒƒãƒˆã™ã‚‹
 	 */
 	p = &((*p)->right );
 
@@ -752,8 +752,8 @@ int hash_free_impl(nodeptr *hashtable, nodeptr *initroot){
 
 
 	/**
-	 * leftAright‚Æ‚à‚Éƒƒ‚ƒŠ‚ª‰ğ•ú‚³‚ê‚½‚çA©ƒm[ƒh‚ğ‰ğ•ú‚·‚é
-	 * ‚½‚¾‚µƒ‹[ƒgƒm[ƒh‚Ìê‡‚Í‰ğ•ú‚µ‚È‚¢
+	 * leftã€rightã¨ã‚‚ã«ãƒ¡ãƒ¢ãƒªãŒè§£æ”¾ã•ã‚ŒãŸã‚‰ã€è‡ªãƒãƒ¼ãƒ‰ã‚’è§£æ”¾ã™ã‚‹
+	 * ãŸã ã—ãƒ«ãƒ¼ãƒˆãƒãƒ¼ãƒ‰ã®å ´åˆã¯è§£æ”¾ã—ãªã„
 	 */
 #ifdef DEBUG2
 	fprintf(stderr, "  center \n");

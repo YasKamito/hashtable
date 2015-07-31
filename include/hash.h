@@ -8,17 +8,17 @@
  *
  * @version		v0.0.1
  *
- * @par ã@î\í«â¡:
+ * @par Ê©üËÉΩËøΩÂä†:
  * | ModID  | Date       | Name           | Description           | TicketID  |
  * | :----: | :--------: | :--------------| :-------------------- | :-------: |
  * | \@f000 | 2015-06-20 | Y.Kamitokusari | Initial release       |           |
  *
- * @par ïsãÔçáèCê≥:
+ * @par ‰∏çÂÖ∑Âêà‰øÆÊ≠£:
  * | ModID  | Date       | Name           | Description           | TicketID  |
  * | :----: | :--------: | :--------------| :-------------------- | :-------: |
  * |        |            |                |                       |           |
  *
- * @par ó·äOèCê≥:
+ * @par ‰æãÂ§ñ‰øÆÊ≠£:
  * | ModID  | Date       | Name           | Description           | TicketID  |
  * | :----: | :--------: | :--------------| :-------------------- | :-------: |
  * |        |            |                |                       |           |
@@ -28,16 +28,16 @@
 #ifndef SAMPLE_TEST_H_
 #define SAMPLE_TEST_H_
 
-#define HASHSIZE		32768 + 3			/**< ÉnÉbÉVÉÖÉTÉCÉY(ëfêî) */
-#define MAXWORDLEN		128					/**< KeyílMaxÉTÉCÉY */
+#define HASHSIZE		32768 + 3			/**< „Éè„ÉÉ„Ç∑„É•„Çµ„Ç§„Ç∫(Á¥†Êï∞) */
+#define MAXWORDLEN		128					/**< KeyÂÄ§Max„Çµ„Ç§„Ç∫ */
 
 /**
- * ÉnÉbÉVÉÖÉmÅ[Éhç\ë¢ëÃ
+ * „Éè„ÉÉ„Ç∑„É•„Éé„Éº„ÉâÊßãÈÄ†‰Ωì
  */
 typedef struct node {
-	struct node 	*left, *right;			/**< ÇQï™íTçıñÿÉ|ÉCÉìÉ^ */
-	char			*key;					/**< ÉnÉbÉVÉÖKey */
-	long 			val;					/**< ÉnÉbÉVÉÖValue */
+	struct node 	*left, *right;			/**< ÔºíÂàÜÊé¢Á¥¢Êú®„Éù„Ç§„É≥„Çø */
+	char			*key;					/**< „Éè„ÉÉ„Ç∑„É•Key */
+	long 			val;					/**< „Éè„ÉÉ„Ç∑„É•Value */
 } *nodeptr;
 
 extern int (*hash)(char *);
